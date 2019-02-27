@@ -1,0 +1,16 @@
+<h1>Edit this Song Review</h1>
+
+  <%= form_for @song do |s| %>
+
+    <%= s.label :title %>
+    <%= s.text_field :title %>
+
+    <%= s.label :artist %>
+    <%= s.text_field :artist %>
+
+    <% s.label :review %>
+    <%= s.text_area :review %>
+
+    <%= s.submit %>
+
+  <% end %>
