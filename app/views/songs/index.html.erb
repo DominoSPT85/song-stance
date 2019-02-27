@@ -1,9 +1,12 @@
-<h1>Songs</h1>
+<h1>Song Reviews</h1>
 
 <% @songs.each do |song| %>
 
     <%= song.title %>
 
     <%= link_to 'Show', song_path(song) %>
+
     
 <% end %>
+
+<%= link_to 'New Review', new_song_path %>
