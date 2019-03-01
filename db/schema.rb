@@ -10,18 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_27_204309) do
+ActiveRecord::Schema.define(version: 2019_03_01_055214) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "reviews", force: :cascade do |t|
+    t.string "author"
+    t.text "body"
+    t.bigint "song_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["song_id"], name: "index_reviews_on_song_id"
+  end
+
   create_table "songs", force: :cascade do |t|
     t.string "title"
     t.string "artist"
-    t.text "review"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "link"
   end
 
+  add_foreign_key "reviews", "songs"
 end

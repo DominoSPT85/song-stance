@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'reviews/index'
+  get 'reviews/new'
+  get 'reviews/show'
   root 'static_pages#home'
 
   get '/about', to: 'static_pages#about'
