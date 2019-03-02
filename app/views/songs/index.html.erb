@@ -1,4 +1,4 @@
-<h1>Song Reviews</h1>
+<h1>Songs</h1>
 
 <% @songs.each do |song| %>
 
@@ -7,10 +7,6 @@
     <%= song.artist %>
 
     <%= link_to 'Show', song_path(song) %>
-
-    <%= link_to 'Edit', edit_song_path(song) %>
-
-    <%= link_to 'Delete', song, method: :delete %>
 
     
 <% end %>

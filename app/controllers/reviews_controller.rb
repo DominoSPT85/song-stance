@@ -13,7 +13,7 @@ class ReviewsController < ApplicationController
 
   def new
     @reviews = @song.reviews.new
-    # render partial: 'reviews/form'
+    render partial: 'reviews/form'
   end
 
   def create
@@ -27,7 +27,7 @@ class ReviewsController < ApplicationController
   end
 
   def edit
-    #render partial: 'reviews/form'
+    render partial: 'reviews/form'
 
   end
 
