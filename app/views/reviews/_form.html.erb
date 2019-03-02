@@ -1,9 +1,9 @@
 <%= form_for [@song, @review] do |r| %>
 
-  <%= r.label :author %>
+  <%= r.label 'Your name:' %>
   <%= r.text_field :author %>
  
-  <%= r.label :body %>
+  <%= r.label 'Your review' %>
   <%= r.text_area :body %>
 
   <%= r.submit %>

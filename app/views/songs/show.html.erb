@@ -5,11 +5,17 @@
 <%= @song.link %>
 
 <hr />
-<!-- add logic here to show reviews if there are any, be the first to review if none -->
+
 <p>Reviews</p>
 
+<% if @song.reviews %>
+  <% @song.reviews.each do |review| %>
+    <%= render 'reviews/review', { review: review } %>
+  <% end %>
+<% else %>
+  <p> There are no reviews for this song yet. Be the first!</p>
+<% end %>
 
-<p>reviews here</p>
 
 
 <%= link_to 'Add a new review', new_song_review_path(@song) %>

@@ -1,1 +1,8 @@
-<h1>Reviews
+<h1><%= @song.title %> - Your Review</h1>
+<p><%= @review.body %></p>
+
+
+<%= link_to 'Edit review', edit_song_review_path([@song, @review]) %>
+<%= link_to 'Delete review', [@song, @review], method: :delete %>
+<%= link_to 'Back To Song', song_path(@song) %>
+
