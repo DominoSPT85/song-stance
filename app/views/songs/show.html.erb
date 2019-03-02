@@ -6,7 +6,18 @@
 
 <%= @song.link %>
 
-<%= @song.review %>
+<!-- add logic here to show reviews if there are any, be the first to review if none -->
+<p>Reviews</p>
+
+<!--put review partial here!-->
+
+
+
+<%= link_to 'Add a new review', new_song_review_path(@song) %>
+
+<%= link_to 'Edit Song', edit_song_path(song) %>
+
+<%= link_to 'Delete', song, method: :delete %>
 
 <%= link_to 'Back', songs_path %>
 
