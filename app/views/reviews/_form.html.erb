@@ -1,10 +1,11 @@
-<%= form_for @review do |r| %>
+<%= form_for [@song, @review] do |r| %>
 
-<%= r.label :author %>
-<%= r.text_field :author %>
+  <%= r.label :author %>
+  <%= r.text_field :author %>
+ 
+  <%= r.label :body %>
+  <%= r.text_area :body %>
 
-<%= r.label :body %>
-<%= r.text_area :body %>
+  <%= r.submit %>
 
-<%= r.submit %>
-
+<% end %>

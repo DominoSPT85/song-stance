@@ -1,8 +1,6 @@
-<h1>Song</h1>
+<h1><%= @song.title %></h1>
 
-<%= @song.title %>
-
-<%= @song.artist %>
+<p>By:<%= @song.artist %></p>
 
 <%= @song.link %>
 
@@ -10,17 +8,15 @@
 <!-- add logic here to show reviews if there are any, be the first to review if none -->
 <p>Reviews</p>
 
-<p>There are no reviews of this song yet. Be the first!</p>
-<!--put review partial here!-->
 
-
+<p>reviews here</p>
 
 
 <%= link_to 'Add a new review', new_song_review_path(@song) %>
 
-<%= link_to 'Edit Song', edit_song_path(song) %>
+<%= link_to 'Edit Song', edit_song_path(@song) %>
 
-<%= link_to 'Delete', song, method: :delete %>
+<%= link_to 'Delete song', @song, method: :delete, data: { confirm: 'Are you sure?' } %>
 
-<%= link_to 'Back', songs_path %>
+<%= link_to 'Back to song list', songs_path %>
 

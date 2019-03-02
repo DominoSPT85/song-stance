@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
   before_action :set_song
 
-  before_action :find_review, only: [:show, :update, :edit, :destroy]
+  before_action :set_review, only: [:show, :update, :edit, :destroy]
 
   def index
     @reviews = @song.reviews
@@ -12,7 +12,7 @@ class ReviewsController < ApplicationController
   end
 
   def new
-    @reviews = @song.reviews.new
+    @review = @song.reviews.new
     render partial: 'reviews/form'
   end
 
@@ -41,7 +41,7 @@ class ReviewsController < ApplicationController
 
   def destroy
     @review.destroy
-    redirect_to sons_reviews_path
+    redirect_to songs_reviews_path
 
 
   end
@@ -49,14 +49,14 @@ class ReviewsController < ApplicationController
   private
 
     def review_params
-      params.require(:review).permit(:body, :author)
+      params.require(:review).permit(:author, :body)
     end
 
     def set_song
-      @song = Song.find(params[:id])
+      @song = Song.find(params[:song_id])
     end
 
-    def find_review
+    def set_review
       @review = Review.find(params[:id])
     end
 end
