@@ -1,14 +1,15 @@
 <h1>Songs</h1>
 
 <% @songs.each do |song| %>
+    <div class='media'>
+    <%= image_tag('purplenotesmall.png', :class => 'align-self-start mr-3')%>
+        <div class='media-body'>
+            <h5><%= song.title %></h5>
+            <p><%= song.artist %></p>
+        <%= link_to 'Show', song_path(song) %>
+        </div>
+    </div>
 
-    <%= song.title %>
-
-    <%= song.artist %>
-
-    <%= link_to 'Show', song_path(song) %>
-
-    
 <% end %>
 
 <%= link_to 'Add a song', new_song_path %>
