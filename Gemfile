@@ -41,6 +41,9 @@ gem 'bootstrap', '~> 4.3.1'
 #jquery rails
 gem 'jquery-rails'
 
+#Font awesome
+gem 'font-awesome-rails'
+
 
 
 group :development, :test do
