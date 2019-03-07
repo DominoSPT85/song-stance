@@ -1,17 +1,21 @@
 
-<%= form_for @song do |s| %>
-
+<%= form_with(model: @song, local: true)  do |s| %>
+  <div class='form-group'>
   <%= s.label :title %>
   <%= s.text_field :title %>
+  </div>
 
+  <div class='form-group'>
   <%= s.label :artist %>
   <%= s.text_field :artist %>
+  </div>
 
+  <div class='form-group'>
   <%= s.label :link %>
   <%= s.text_field :link %>
-
+  </div>
  <!-- figure out how to embed review form here -->
 
-  <%= s.submit %>
+  <%= s.submit nil, class: 'btn btn-primary' %>
 
 <% end %>

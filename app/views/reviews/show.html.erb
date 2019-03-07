@@ -2,7 +2,16 @@
 <p><%= @review.body %></p>
 
 
-<%= link_to 'Edit review', edit_song_review_path([@song, @review]) %>
-<%= link_to 'Delete review', [@song, @review], method: :delete %>
-<%= link_to 'Back To Song', song_path(@song) %>
-
+<nav class='navbar fixed-bottom navbar-light bg-light' >
+    <ul class='navbar-nav'>
+      <li class='nav-item'>
+          <%= link_to 'Edit review', edit_song_review_path([@song, @review]), :class => 'nav-link'  %>
+      </li>
+      <li class='nav-item'>
+          <%= link_to 'Delete review', [@song, @review], method: :delete, :class => 'nav-link'  %>
+      </li>
+      <li class='nav-item'>
+        <%= link_to 'Back To Song', song_path(@song), :class => 'nav-link'  %>
+      </li>
+    </ul>
+</nav>
